@@ -1,0 +1,6 @@
+fr\gtm\op4youMaven\dao\YoutuberDAO.class
+fr\gtm\op4youMaven\domaine\Youtuber.class
+fr\gtm\op4youMaven\dao\ConnectionBDD.class
+fr\gtm\op4youMaven\service\YoutuberService.class
+fr\gtm\op4youMaven\domaine\OpCommerciale.class
+fr\gtm\op4youMaven\presentation\Connexion.class

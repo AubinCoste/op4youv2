@@ -1,0 +1,24 @@
+.navbar-brand>img{
+	height: 100%;
+}
+.navbar{
+	font-family: 'Roboto';
+	font-size: 20px;
+}
+.titre{
+	font-family: 'Montserrat Alternates';
+}
+.form-wrapper{
+	max-width: 800px;
+	margin: 50px auto;
+}
+.input-group{
+	margin: 30px auto;
+	max-width: 60%;
+}
+.panel-footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
