@@ -2,6 +2,14 @@
 <%@page import="fr.gtm.op4youMaven.domaine.Youtuber"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <!-- controle, iterations, tests, variables -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!-- traitement XML -->
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+<!-- formattage des donnees -->
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!-- SQL/JDBC -->
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +43,8 @@
 	</div>
 </nav>
 <div class="container">
-	<% Youtuber yt = (Youtuber) session.getAttribute("user"); %>
+	<% Youtuber yt = (Youtuber) session.getAttribute("monYoutuber"); %>
+	
 	<h3 class="titre">Bienvenue sur votre page personnelle <%=yt.getPrenom() %></h3><br>
 	<div class="panel panel-default">
 	  <div class="panel-heading">Liste des Youtubeurs</div>
@@ -46,7 +55,7 @@
 	  		<th>Nom de la chaine Youtube</th>
 	  		<th>Nombre d'abonnés</th>
 	  	</tr>
-	  	<% ArrayList<Youtuber> maListe = (ArrayList<Youtuber>) session.getAttribute("listeyt"); %>
+	  	<% ArrayList<Youtuber> maListe = (ArrayList<Youtuber>) session.getAttribute("listeYoutuber"); %>
 	  	<% for(Youtuber monYt : maListe){
 	  		out.println("<tr>");
 	  		out.println("<td>"+monYt.getNom()+"</td>");

@@ -62,8 +62,8 @@ public class Connexion extends HttpServlet{
 		ArrayList<Youtuber> listeYoutuber = yts.getAll();
 		
 		HttpSession maSession = request.getSession();
-		maSession.setAttribute("user", monYoutuber);
-		maSession.setAttribute("listeyt", listeYoutuber);
+		maSession.setAttribute("monYoutuber", monYoutuber);
+		maSession.setAttribute("listeYoutuber", listeYoutuber);
 			
 		
 		if (monYoutuber != null){
