@@ -29,14 +29,12 @@ public class ConnectionBDD {
 		 * 
 		 * Constructeur de niveau 1 permettant de modifier les paramètres de connexion
 		 */
-		public ConnectionBDD(String url, String login, String pass, Connection connect, Statement st, String laRequete) {
+		public ConnectionBDD(String url, String login, String pass) {
 			super();
 			this.url = url;
 			this.login = login;
 			this.pass = pass;
-			this.connect = connect;
-			this.st = st;
-			this.laRequete = laRequete;
+		
 		}
 		
 		/**

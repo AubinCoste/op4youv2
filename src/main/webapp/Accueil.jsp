@@ -2,14 +2,8 @@
 <%@page import="fr.gtm.op4youMaven.domaine.Youtuber"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <!-- controle, iterations, tests, variables -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!-- traitement XML -->
-<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
-<!-- formattage des donnees -->
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!-- SQL/JDBC -->
-<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,9 +37,9 @@
 	</div>
 </nav>
 <div class="container">
-	<% Youtuber yt = (Youtuber) session.getAttribute("monYoutuber"); %>
+	<c:set var="myTest" value="testValue"/>
 	
-	<h3 class="titre">Bienvenue sur votre page personnelle <%=yt.getPrenom() %></h3><br>
+	<h3 class="titre">Bienvenue sur votre page personnelle <c:out value="${monYoutuber.prenom}" /></h3><br>
 	<div class="panel panel-default">
 	  <div class="panel-heading">Liste des Youtubeurs</div>
 	  <table class="table">
@@ -55,16 +49,14 @@
 	  		<th>Nom de la chaine Youtube</th>
 	  		<th>Nombre d'abonnés</th>
 	  	</tr>
-	  	<% ArrayList<Youtuber> maListe = (ArrayList<Youtuber>) session.getAttribute("listeYoutuber"); %>
-	  	<% for(Youtuber monYt : maListe){
-	  		out.println("<tr>");
-	  		out.println("<td>"+monYt.getNom()+"</td>");
-	  		out.println("<td>"+monYt.getPrenom()+"</td>");
-	  		out.println("<td>"+monYt.getNomChaine()+"</td>");
-	  		out.println("<td>"+monYt.getNbrAbonnes()+"</td>");
-	  		out.println("</tr>");
-	  	}
-	  	%>
+	  	<c:forEach items="${listeYoutuber}" var="youtuber">
+	  		<tr>
+	  			<td><c:out value="${youtuber.nom}" /></td>
+	  			<td><c:out value="${youtuber.prenom}" /></td>
+	  			<td><c:out value="${youtuber.nomChaine}" /></td>
+	  			<td><c:out value="${youtuber.nbrAbonnes}" /></td>
+	  		</tr>
+	  	</c:forEach>
 	  </table>
 	</div>
 </div>
